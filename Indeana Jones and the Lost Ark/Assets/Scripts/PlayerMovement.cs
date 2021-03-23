@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float Speed = 10;
-    public float MaxSpeed = 100;
     public float JumpSpeed = 10;
     public float GravUp = 1;
     public float GravDown = 1.5f;
@@ -36,14 +35,6 @@ public class PlayerMovement : MonoBehaviour
         Inputs.x = Input.GetAxis("Horizontal");
 
         Rb.velocity = new Vector2(Inputs.x * Speed * drag, Rb.velocity.y);
-
-        if (Rb.velocity.x > MaxSpeed) 
-        {
-            Rb.velocity = new Vector2(MaxSpeed, Rb.velocity.y);
-        }else if (Rb.velocity.x < -MaxSpeed)
-        {
-            Rb.velocity = new Vector2(-MaxSpeed, Rb.velocity.y);
-        }
 
         CheckGravaty();
     }
