@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public float JumpSpeed = 10;
     public float GravUp = 1;
     public float GravDown = 1.5f;
+    public float airDrag = 0.8f;
+    public float drag = 1;
+    private bool onGround = false;
     private Vector2 Inputs;
     private Rigidbody2D Rb;
 
@@ -19,9 +22,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        onGround = gameObject.GetComponentInChildren<DetectGroudPoint>().onGround;
+
+        if (!onGround) 
+        {
+            drag = airDrag;
+        }
+        else 
+        {
+            drag = 1;
+        }
+        
         Inputs.x = Input.GetAxis("Horizontal");
 
-        Rb.velocity = new Vector2(Inputs.x * Speed, Rb.velocity.y);
+        Rb.velocity = new Vector2(Inputs.x * Speed * drag, Rb.velocity.y);
 
         if (Rb.velocity.x > MaxSpeed) 
         {
@@ -31,30 +45,18 @@ public class PlayerMovement : MonoBehaviour
             Rb.velocity = new Vector2(-MaxSpeed, Rb.velocity.y);
         }
 
-        checkGravaty();
+        CheckGravaty();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && onGround == true)
         {
-            Inputs.y = 1;
             Rb.velocity = new Vector2(Rb.velocity.x, JumpSpeed);
-        }
-        else 
-        {
-            Inputs.y = 0;
         }
     }
 
-    private void checkGravaty() 
+    private void CheckGravaty() 
     {
         if (Rb.velocity.y >= 0) 
         {
