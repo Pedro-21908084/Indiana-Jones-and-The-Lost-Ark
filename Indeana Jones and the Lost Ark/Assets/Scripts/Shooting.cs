@@ -8,12 +8,6 @@ public class Shooting : MonoBehaviour
     public int Bullets = 5;
     public GameObject Bullet;
     public GameObject ShootingPoint;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -30,6 +24,9 @@ public class Shooting : MonoBehaviour
             Instantiate(Bullet, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
             Shoot = false;
             Bullets -= 1;
+        }else if (Bullets <= 0) 
+        {
+            Shoot = false;
         }
     }
 }
