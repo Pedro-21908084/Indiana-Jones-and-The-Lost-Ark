@@ -51,6 +51,14 @@ public class PlayerMovement : MonoBehaviour
         {
             Rb.velocity = new Vector2(Rb.velocity.x, JumpSpeed);
         }
+
+        if(Rb.velocity.x > 0) 
+        {
+            gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+        }else
+        {
+            gameObject.transform.eulerAngles = new Vector3(0, 180, 0);
+        }
     }
 
     //changes the gravaty scale depending if the object is falling or going up

@@ -56,4 +56,16 @@ public class EnemyMovement : MonoBehaviour
             toTheLeft = true;
         }
     }
+
+    private void Update()
+    {
+        if (Rb.velocity.x > 0)
+        {
+            gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            gameObject.transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+    }
 }
