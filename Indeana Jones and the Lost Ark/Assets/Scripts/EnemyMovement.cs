@@ -5,16 +5,16 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     //game objects and floats to store the ends of wlak cicles
-    public GameObject Left;
-    private float MaxLeft = 0;
-    public GameObject Right;
-    private float MaxRight = 0;
-
-    public float Speed = 10;
-    public float MaxSpeed = 100;
-    private bool onGround = false;
-    private bool toTheLeft = true;
-    private Rigidbody2D Rb;
+    public GameObject       Left;
+    private float           MaxLeft = 0;
+    public GameObject       Right;
+    private float           MaxRight = 0;
+    public bool             move = true;
+    public float            Speed = 10;
+    public float            MaxSpeed = 100;
+    private bool            onGround = false;
+    private bool            toTheLeft = true;
+    private Rigidbody2D     Rb;
 
     private void Start()
     {
@@ -39,12 +39,15 @@ public class EnemyMovement : MonoBehaviour
         onGround = gameObject.GetComponentInChildren<DetectGroudPoint>().onGround;
 
         //if it is on the ground, is going left and its position didnt pass the max point keeps the -speed else its speed becames +
-        if(toTheLeft && onGround && gameObject.transform.position.x > MaxLeft) 
+        if(toTheLeft && onGround && gameObject.transform.position.x > MaxLeft && move) 
         {
             Rb.velocity = new Vector2(-Speed, Rb.velocity.y);
-        }else if (!toTheLeft && onGround && gameObject.transform.position.x < MaxRight)
+        }else if (!toTheLeft && onGround && gameObject.transform.position.x < MaxRight && move)
         {
             Rb.velocity = new Vector2(Speed, Rb.velocity.y);
+        }else if (move == false) 
+        {
+            Rb.velocity = new Vector2(0, Rb.velocity.y);
         }
 
         //if it reaches the max point turns to the other side

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float Speed = 10;
-    public float JumpSpeed = 10;
-    public float GravUp = 1;
-    public float GravDown = 1.5f;
-    public float airDrag = 0.8f;
-    public float drag = 1;
-    private bool onGround = false;
-    private Vector2 Inputs;
-    private Rigidbody2D Rb;
+    public float            Speed = 10;
+    public float            JumpSpeed = 10;
+    public float            GravUp = 1;
+    public float            GravDown = 1.5f;
+    public float            airDrag = 0.8f;
+    public float            drag = 1;
+    private bool            onGround = false;
+    private Vector2         Inputs;
+    private Rigidbody2D     Rb;
 
     private void Awake()
     {

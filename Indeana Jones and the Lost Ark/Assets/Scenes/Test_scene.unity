@@ -136,9 +136,10 @@ GameObject:
   - component: {fileID: 303756368}
   - component: {fileID: 303756367}
   - component: {fileID: 303756366}
-  m_Layer: 0
+  - component: {fileID: 303756371}
+  m_Layer: 3
   m_Name: temp player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,9 +159,9 @@ MonoBehaviour:
   Speed: 10
   JumpSpeed: 10
   GravUp: 2.5
-  GravDown: 3.5
-  airDrag: 1
-  drag: 0
+  GravDown: 4
+  airDrag: 0.5
+  drag: 1
 --- !u!50 &303756367
 Rigidbody2D:
   serializedVersion: 4
@@ -264,6 +265,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &303756371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303756365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d71b28d8fd3adec49ab973e309e6f61b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shoot: 0
+  Bullets: 5
+  Bullet: {fileID: 737135630734602095, guid: 2dd53a934c4eb77488ef60672b70ecfa, type: 3}
+  ShootingPoint: {fileID: 1990612108}
+  player: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +377,7 @@ GameObject:
   - component: {fileID: 746311044}
   - component: {fileID: 746311043}
   - component: {fileID: 746311042}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: temp plat
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -478,6 +496,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1653653650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653653651}
+  m_Layer: 3
+  m_Name: Eyes
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1653653651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653653650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.55, y: 0.379, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2059199991}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684150658
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +640,41 @@ Transform:
   m_Father: {fileID: 2059199991}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1894693445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 737135630734602095, guid: 2dd53a934c4eb77488ef60672b70ecfa, type: 3}
+  m_PrefabInstance: {fileID: 737135630233701990}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1990612108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990612109}
+  m_Layer: 0
+  m_Name: ShootingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1990612109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990612108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.57, y: 0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 303756370}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2059199987
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +688,9 @@ GameObject:
   - component: {fileID: 2059199989}
   - component: {fileID: 2059199988}
   - component: {fileID: 2059199992}
-  m_Layer: 0
+  - component: {fileID: 2059199994}
+  - component: {fileID: 2059199993}
+  m_Layer: 3
   m_Name: temp enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,6 +799,7 @@ Transform:
   - {fileID: 2131278675}
   - {fileID: 2086106195}
   - {fileID: 1788553501}
+  - {fileID: 1653653651}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -731,8 +817,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Left: {fileID: 2086106194}
   Right: {fileID: 1788553500}
+  move: 1
   Speed: 2
   MaxSpeed: 100
+--- !u!114 &2059199993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059199987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d71b28d8fd3adec49ab973e309e6f61b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shoot: 0
+  Bullets: 1000
+  Bullet: {fileID: 1894693445}
+  ShootingPoint: {fileID: 1653653650}
+  player: 0
+--- !u!114 &2059199994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059199987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3baff21801dff3046b3bc5fcb09b14e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 20
+  PlayerTag: Player
+  eyes: {fileID: 1653653651}
+  meele: 0
+  ShootTimer: 1
 --- !u!1 &2086106194
 GameObject:
   m_ObjectHideFlags: 0
