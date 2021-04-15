@@ -153,3 +153,4 @@ MonoBehaviour:
   Damage: 1
   DamagingTag: Enemy
   IgnoreTag: Player
+  IgnoreTag2: Hook Area

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Enemy
+  - Hook Area
   layers:
   - Default
   - TransparentFX
