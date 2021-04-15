@@ -150,7 +150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Continues: 0
   DestroyOnContact: 1
+  DisableOnContact: 0
   Damage: 1
   DamagingTag: Enemy
   IgnoreTag: Player
   IgnoreTag2: Hook Area
+  IgnoreTag3: Untagged
