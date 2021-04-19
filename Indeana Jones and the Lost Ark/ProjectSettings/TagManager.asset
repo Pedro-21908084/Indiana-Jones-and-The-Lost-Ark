@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Enemy
+  - Hook Area
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactive
   - Water
   - UI
   - 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DetectGroudPoint : MonoBehaviour
 {
-    public string Floor;
-    public bool onGround = false;
+    public string       Floor;
+    public bool         onGround = false;
 
     //when touches the ground bool turns true
     private void OnTriggerEnter2D(Collider2D collision)

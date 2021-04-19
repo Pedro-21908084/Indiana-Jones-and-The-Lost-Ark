@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    public bool Shoot = false;
-    public int Bullets = 5;
-    public GameObject Bullet;
-    public GameObject ShootingPoint;
+    public bool             Shoot = false;
+    public int              Bullets = 5;
+    public GameObject       Bullet;
+    public GameObject       ShootingPoint;
+    public bool             player = true;
 
     // Update is called once per frame
     void Update()
     {
         //temp
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && player)
         {
             Shoot = true;
         }
