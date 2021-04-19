@@ -34,11 +34,12 @@ public class Health : MonoBehaviour
         if (!invensible)
         {
             HP += mod;
+            if (mod < 0)
+            {
+                timer = invensibleTimer;
+            }
         }
-        if(mod < 0) 
-        {
-            timer = invensibleTimer;
-        }
+        
     }
 
     private void Death() 
