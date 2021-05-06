@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float Speed = 10;
-    public float JumpSpeed = 10;
-    public float GravUp = 1;
-    public float GravDown = 1.5f;
-    public float airDrag = 0.8f;
-    public float drag = 1;
-    private bool onGround = false;
-    private Vector2 Inputs;
-    private Rigidbody2D Rb;
+    //public float            Speed = 10;
+    public float            MaxSpeed = 10;
+    public float            JumpSpeed = 10;
+    public float            GravUp = 1;
+    public float            GravDown = 1.5f;
+    public float            airDrag = 0.8f;
+    public float            drag = 1;
+    private bool            onGround = false;
+    private Vector2         Inputs;
+    private Rigidbody2D     Rb;
+    public bool             hooking = false;
 
     private void Awake()
     {
@@ -39,7 +41,56 @@ public class PlayerMovement : MonoBehaviour
         Inputs.x = Input.GetAxis("Horizontal");
 
         //varies the velocity of the object depending on the input
-        Rb.velocity = new Vector2(Inputs.x * Speed * drag, Rb.velocity.y);
+        if (hooking)
+        {
+            Rb.velocity = new Vector2(Rb.velocity.x + Inputs.x * drag, Rb.velocity.y);
+            if (Rb.velocity.x > MaxSpeed)
+            {
+                if (Rb.velocity.x > 2 * MaxSpeed)
+                {
+                    Rb.velocity = new Vector2(2 * MaxSpeed, Rb.velocity.y);
+                }
+                else if (Rb.velocity.x > 2 * MaxSpeed)
+                {
+                    Rb.velocity = new Vector2(2 * MaxSpeed, Rb.velocity.y);
+                }
+            }
+        }else
+        {
+            Rb.velocity = new Vector2(MaxSpeed * Inputs.x * drag, Rb.velocity.y);
+        }
+        /*if (Inputs.x != 0)
+        {
+            Rb.velocity = new Vector2(Rb.velocity.x + Inputs.x * drag, Rb.velocity.y);
+            if(Rb.velocity.x > MaxSpeed) 
+            {
+                if (hooking) 
+                {
+                    if(Rb.velocity.x > 2 * MaxSpeed) 
+                    {
+                        Rb.velocity = new Vector2(2 * MaxSpeed, Rb.velocity.y);
+                    }
+                }
+                else
+                {
+                    Rb.velocity = new Vector2(MaxSpeed, Rb.velocity.y);
+                }
+
+            }else if (Rb.velocity.x < -MaxSpeed)
+            {
+                if (hooking)
+                {
+                    if (Rb.velocity.x < 2 * -MaxSpeed)
+                    {
+                        Rb.velocity = new Vector2(2 * -MaxSpeed, Rb.velocity.y);
+                    }
+                }
+                else
+                {
+                    Rb.velocity = new Vector2(-MaxSpeed, Rb.velocity.y);
+                }
+            }
+        }*/
 
         CheckGravaty();
     }
@@ -52,12 +103,17 @@ public class PlayerMovement : MonoBehaviour
             Rb.velocity = new Vector2(Rb.velocity.x, JumpSpeed);
         }
 
-        if(Rb.velocity.x > 0) 
+        if (Rb.velocity.x > 0.2 && !hooking)
         {
             gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
-        }else
+        }else if(Rb.velocity.x < -0.2 && !hooking)
         {
             gameObject.transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+
+        if (Inputs.x == 0 && !hooking && onGround)
+        {
+            Rb.velocity = new Vector2(0, Rb.velocity.y);
         }
     }
 
@@ -67,9 +123,14 @@ public class PlayerMovement : MonoBehaviour
         if (Rb.velocity.y >= 0) 
         {
             Rb.gravityScale = GravUp;
-        }else 
+        }else if(!hooking)
         {
             Rb.gravityScale = GravDown;
+        }
+
+        if(Rb.velocity.y > JumpSpeed) 
+        {
+            Rb.velocity = new Vector2(Rb.velocity.x, JumpSpeed);
         }
     }
 }

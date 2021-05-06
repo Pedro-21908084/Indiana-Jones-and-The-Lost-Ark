@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MoveFoward : MonoBehaviour
 {
-    public float speed = 20;
-    private Rigidbody2D Rb;
+    public float            speed = 20;
+    private Rigidbody2D     Rb;
     void Start()
     {
         Rb = gameObject.GetComponent<Rigidbody2D>();

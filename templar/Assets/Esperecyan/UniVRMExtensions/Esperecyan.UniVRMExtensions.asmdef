@@ -1,0 +1,19 @@
+{
+    "name": "Esperecyan.UniVRMExtensions",
+    "rootNamespace": "",
+    "references": [
+        "VRM",
+        "UniGLTF"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
