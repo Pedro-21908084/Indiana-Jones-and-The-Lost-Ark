@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 4920306944503029604}
   - component: {fileID: 4920306944503029606}
   m_Layer: 3
-  m_Name: temp enemy
+  m_Name: Nazi
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
