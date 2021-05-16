@@ -12,7 +12,8 @@ public class EnemyControlller : MonoBehaviour
     public bool             meele = false;
     public int              ShootTimer = 5;
     private float           timer = 0;
-    
+    public GameObject       DamageZone;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,7 @@ public class EnemyControlller : MonoBehaviour
             Legs.move = false;
             attack();
             timer = ShootTimer;
-        }else 
+        }else if (!SeePlayer())
         {
             Legs.move = true;
         }
@@ -48,7 +49,6 @@ public class EnemyControlller : MonoBehaviour
     bool SeePlayer() 
     {
         Vector2 maxRange = eyes.position + eyes.right * Range;
-
         RaycastHit2D hit = Physics2D.Linecast(eyes.position, maxRange, 1 << LayerMask.NameToLayer("Interactive"));
 
         if(hit.collider != null) 
@@ -66,11 +66,20 @@ public class EnemyControlller : MonoBehaviour
     {
         if (meele) 
         {
-            Debug.Log("melle attack");
+            GetComponent<Animator>().SetTrigger("Attack");
         }
         else 
         {
             Gun.Shoot = true;
         }
+    }
+
+    public void Attack()
+    {
+        DamageZone.gameObject.SetActive(true);
+    }
+    public void stopAttack()
+    {
+        DamageZone.gameObject.SetActive(false);
     }
 }

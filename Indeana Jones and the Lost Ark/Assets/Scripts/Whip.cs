@@ -35,7 +35,8 @@ public class Whip : MonoBehaviour
         }
         if (!inUse && Input.GetButtonDown("Fire2")) 
         {
-            WhipAttack();
+            inUse = true;
+            GetComponent<Animator>().SetTrigger("Attack");
         }
         if (inUse) 
         {
@@ -68,11 +69,7 @@ public class Whip : MonoBehaviour
     //will be call by the animation
     public void WhipAttack() 
     {
-        inUse = true;
         whipDamageZone.gameObject.SetActive(true);
-        Debug.Log("Attack!");
-        //temp
-        inUse = false;
     }
     public void stopAttack() 
     {

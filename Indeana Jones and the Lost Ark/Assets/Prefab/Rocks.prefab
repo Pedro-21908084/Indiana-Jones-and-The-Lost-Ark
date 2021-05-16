@@ -48,6 +48,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -188,13 +189,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197033148409800787}
-  m_LocalRotation: {x: -0, y: -0, z: 0.27407202, w: 0.96170926}
-  m_LocalPosition: {x: 0.8629176, y: -0.178126, z: 0}
+  m_LocalRotation: {x: 0.27406824, y: 0.9617102, z: 0, w: 0}
+  m_LocalPosition: {x: -0.94, y: -0.16, z: 0}
   m_LocalScale: {x: 3.2141173, y: 0.21001755, z: 1}
   m_Children: []
   m_Father: {fileID: 197033147643743829}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 32.271}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 31.813}
 --- !u!212 &197033148409800789
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -206,6 +207,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -321,13 +323,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197033148679255255}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0039918902, w: 0.9999921}
-  m_LocalPosition: {x: -0.5919875, y: -0.5988239, z: 0}
-  m_LocalScale: {x: 0.4375679, y: 0.52605164, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.72, y: -0.0342, z: 0}
+  m_LocalScale: {x: 0.4375679, y: 1.7776271, z: 1}
   m_Children: []
   m_Father: {fileID: 197033147643743829}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &197033148679255261
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -339,6 +341,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -439,7 +442,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.8895633, y: -1.8804195}
+  m_Offset: {x: -2.8895633, y: -1.2617753}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -450,7 +453,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.9150167, y: 1.2406545}
+  m_Size: {x: 6.9150167, y: 0.8000108}
   m_EdgeRadius: 0
 --- !u!114 &197033148679255257
 MonoBehaviour:

@@ -62,6 +62,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        GetComponent<Animator>().SetFloat("speed", Mathf.Abs(Rb.velocity.x));
+
         if (Rb.velocity.x > 0)
         {
             gameObject.transform.eulerAngles = new Vector3(0, 0, 0);

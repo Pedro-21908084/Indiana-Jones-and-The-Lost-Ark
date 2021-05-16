@@ -9,7 +9,10 @@ public class Traps : MonoBehaviour
     public bool spearsGround = false;
     public GameObject spears;
     public bool rocks = false;
-    public string   target;
+    public string target;
+    private bool shoot = false;
+    private float timer = 0;
+    public float ShootTimer = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,7 +24,7 @@ public class Traps : MonoBehaviour
             }
             else if (arrows)
             {
-                ActivateArrows();
+                shoot = true;
             }
             else if (spearsGround)
             {
@@ -34,7 +37,29 @@ public class Traps : MonoBehaviour
         }
     }
 
-    private void ActivateFalseFloor() 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == target && arrows)
+        {
+            shoot = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (shoot && timer <= 0)
+        {
+            ActivateArrows();
+            timer = ShootTimer;
+        }
+
+        if (timer >= 0)
+        {
+            timer -= Time.deltaTime;
+        }
+    }
+
+    private void ActivateFalseFloor()
     {
         gameObject.SetActive(false);
     }
