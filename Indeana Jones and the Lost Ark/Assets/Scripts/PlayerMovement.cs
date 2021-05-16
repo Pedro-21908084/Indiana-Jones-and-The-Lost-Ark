@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
             Rb.velocity = new Vector2(MaxSpeed * Inputs.x * drag, Rb.velocity.y);
         }
 
-        if (GetComponent<Whip>().inUse) 
+        if (GetComponent<Whip>().attacking) 
         {
             Rb.velocity = new Vector2(0, Rb.velocity.y);
         }
