@@ -9,6 +9,8 @@ public class Health : MonoBehaviour
     public bool invensible = false;
     public int invensibleTimer = 5;
     private float timer = 0;
+    public bool player = false;
+    public GameObject restart;
 
     // Update is called once per frame
     void Update()
@@ -48,6 +50,15 @@ public class Health : MonoBehaviour
         {
             Instantiate(drop, gameObject.transform.position, gameObject.transform.rotation);
         }
-        Destroy(gameObject);
+        if (player) 
+        {
+            //Destroy(gameObject);
+            restart.SetActive(true);
+            gameObject.SetActive(false);
+        }
+        else 
+        {
+            Destroy(gameObject);
+        }
     }
 }

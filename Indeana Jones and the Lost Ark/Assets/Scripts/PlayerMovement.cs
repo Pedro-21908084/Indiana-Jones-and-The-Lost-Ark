@@ -60,44 +60,12 @@ public class PlayerMovement : MonoBehaviour
             Rb.velocity = new Vector2(MaxSpeed * Inputs.x * drag, Rb.velocity.y);
         }
 
-        if (GetComponent<Whip>().attacking) 
+        if (GetComponent<Whip>().attacking || GetComponentInChildren<DetectWall>().againstWall) 
         {
             Rb.velocity = new Vector2(0, Rb.velocity.y);
         }
-                /*if (Inputs.x != 0)
-                {
-                    Rb.velocity = new Vector2(Rb.velocity.x + Inputs.x * drag, Rb.velocity.y);
-                    if(Rb.velocity.x > MaxSpeed) 
-                    {
-                        if (hooking) 
-                        {
-                            if(Rb.velocity.x > 2 * MaxSpeed) 
-                            {
-                                Rb.velocity = new Vector2(2 * MaxSpeed, Rb.velocity.y);
-                            }
-                        }
-                        else
-                        {
-                            Rb.velocity = new Vector2(MaxSpeed, Rb.velocity.y);
-                        }
-
-                    }else if (Rb.velocity.x < -MaxSpeed)
-                    {
-                        if (hooking)
-                        {
-                            if (Rb.velocity.x < 2 * -MaxSpeed)
-                            {
-                                Rb.velocity = new Vector2(2 * -MaxSpeed, Rb.velocity.y);
-                            }
-                        }
-                        else
-                        {
-                            Rb.velocity = new Vector2(-MaxSpeed, Rb.velocity.y);
-                        }
-                    }
-                }*/
-
-                CheckGravaty();
+                
+        CheckGravaty();
     }
 
     void Update()

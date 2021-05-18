@@ -74,7 +74,7 @@ public class EnemyControlller : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public void MelleAttack()
     {
         DamageZone.gameObject.SetActive(true);
     }
