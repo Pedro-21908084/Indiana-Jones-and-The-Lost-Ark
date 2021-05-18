@@ -517,6 +517,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks
       objectReference: {fileID: 0}
+    - target: {fileID: 197033148679255255, guid: 5ac11384dcc104e4fbc5576ee76e87e8, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 197033148679255260, guid: 5ac11384dcc104e4fbc5576ee76e87e8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ac11384dcc104e4fbc5576ee76e87e8, type: 3}
 --- !u!1001 &232577237
