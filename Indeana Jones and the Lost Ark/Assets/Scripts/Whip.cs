@@ -5,6 +5,7 @@ using UnityEngine;
 public class Whip : MonoBehaviour
 {
     public bool                 inUse = false;
+    public bool                 attacking = false;
     public bool                 inHookArea = false;
     public Transform            Hook;
     private LineRenderer        whip;
@@ -35,9 +36,11 @@ public class Whip : MonoBehaviour
         }
         if (!inUse && Input.GetButtonDown("Fire2")) 
         {
-            WhipAttack();
+            inUse = true;
+            attacking = true;
+            GetComponent<Animator>().SetTrigger("Attack");
         }
-        if (inUse) 
+        if (inUse && !attacking) 
         {
             whip.SetPosition(0, ShootingPoint.position);
             whip.SetPosition(1, Hook.position);
@@ -68,15 +71,12 @@ public class Whip : MonoBehaviour
     //will be call by the animation
     public void WhipAttack() 
     {
-        inUse = true;
         whipDamageZone.gameObject.SetActive(true);
-        Debug.Log("Attack!");
-        //temp
-        inUse = false;
     }
     public void stopAttack() 
     {
         whipDamageZone.gameObject.SetActive(false);
         inUse = false;
+        attacking = false;
     }
 }

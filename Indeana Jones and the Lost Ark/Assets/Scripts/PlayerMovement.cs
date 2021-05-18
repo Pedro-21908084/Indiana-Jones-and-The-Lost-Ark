@@ -59,44 +59,19 @@ public class PlayerMovement : MonoBehaviour
         {
             Rb.velocity = new Vector2(MaxSpeed * Inputs.x * drag, Rb.velocity.y);
         }
-        /*if (Inputs.x != 0)
+
+        if (GetComponent<Whip>().attacking || GetComponentInChildren<DetectWall>().againstWall) 
         {
-            Rb.velocity = new Vector2(Rb.velocity.x + Inputs.x * drag, Rb.velocity.y);
-            if(Rb.velocity.x > MaxSpeed) 
-            {
-                if (hooking) 
-                {
-                    if(Rb.velocity.x > 2 * MaxSpeed) 
-                    {
-                        Rb.velocity = new Vector2(2 * MaxSpeed, Rb.velocity.y);
-                    }
-                }
-                else
-                {
-                    Rb.velocity = new Vector2(MaxSpeed, Rb.velocity.y);
-                }
-
-            }else if (Rb.velocity.x < -MaxSpeed)
-            {
-                if (hooking)
-                {
-                    if (Rb.velocity.x < 2 * -MaxSpeed)
-                    {
-                        Rb.velocity = new Vector2(2 * -MaxSpeed, Rb.velocity.y);
-                    }
-                }
-                else
-                {
-                    Rb.velocity = new Vector2(-MaxSpeed, Rb.velocity.y);
-                }
-            }
-        }*/
-
+            Rb.velocity = new Vector2(0, Rb.velocity.y);
+        }
+                
         CheckGravaty();
     }
 
     void Update()
     {
+        GetComponent<Animator>().SetBool("IsJumping", !onGround);
+        GetComponent<Animator>().SetFloat("speed", Mathf.Abs(Rb.velocity.x));
         //if the object is on ground and the space key is pressed the object jumps
         if (Input.GetButtonDown("Jump") && onGround == true)
         {

@@ -41,6 +41,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Arte escondida
+    uniqueID: 3160819617
+    locked: 0
+  - name: background
+    uniqueID: 1227853655
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player&Decor
+    uniqueID: 3182901443
     locked: 0
