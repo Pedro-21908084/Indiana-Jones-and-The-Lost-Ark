@@ -10,6 +10,7 @@ public class Loader : MonoBehaviour
     public string PlayerTag;
     public bool tutorial = true;
     public GameObject tutorialScreen;
+    private int level = 0;
 
     public void restart()
     {
@@ -34,7 +35,24 @@ public class Loader : MonoBehaviour
         }
         else 
         {
+            level += 1;
+            saveGame();
             LoadNext();
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void saveGame() 
+    {
+        PlayerPrefs.SetInt("Level",level);
+    }
+
+    public void loadGame() 
+    {
+        level = PlayerPrefs.GetInt("Level");
     }
 }

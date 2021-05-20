@@ -48,6 +48,13 @@ public class Whip : MonoBehaviour
         if(SolidWhip.enabled == true) 
         {
             SolidWhip.distance -= verticalMov/10;
+            if(SolidWhip.distance < 1) 
+            {
+                SolidWhip.distance = 1.0f;
+            }else if(SolidWhip.distance > 6.5f) 
+            {
+                SolidWhip.distance = 6.5f;
+            }
         }
     }
 
