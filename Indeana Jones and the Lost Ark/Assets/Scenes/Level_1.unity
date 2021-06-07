@@ -21542,6 +21542,13 @@ MonoBehaviour:
   PlayerTag: Player
   tutorial: 1
   tutorialScreen: {fileID: 1723431949}
+  level: 0
+  loading: 0
+  image: {fileID: 0}
+  Image12: {fileID: 0}
+  Image23: {fileID: 0}
+  Image34: {fileID: 0}
+  Imagefinal: {fileID: 0}
 --- !u!4 &484724258
 Transform:
   m_ObjectHideFlags: 0
