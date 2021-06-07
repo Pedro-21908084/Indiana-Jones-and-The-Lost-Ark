@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bbfc47beeaf9e04899aed9ea6a1b12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: Level_1
+  NextScene: Level 1
   MainMenu: 
   PlayerTag: Player
   tutorial: 0

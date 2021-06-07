@@ -21348,10 +21348,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bbfc47beeaf9e04899aed9ea6a1b12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: 
-  MainMenu: 
+  NextScene: Level 2
+  MainMenu: MainMenu
   PlayerTag: Player
-  tutorial: 1
+  tutorial: 0
   tutorialScreen: {fileID: 1723431949}
 --- !u!4 &484724258
 Transform:
