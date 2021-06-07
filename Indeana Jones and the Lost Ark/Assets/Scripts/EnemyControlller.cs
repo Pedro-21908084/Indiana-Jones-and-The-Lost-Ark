@@ -55,7 +55,6 @@ public class EnemyControlller : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag(PlayerTag))
             {
-                Debug.Log("i see you");
                 return true;
             }
         }
