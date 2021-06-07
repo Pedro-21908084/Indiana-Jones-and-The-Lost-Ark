@@ -3,14 +3,13 @@
 
 ## Pitch
 
-Para este projeto decidimos fazer um jogo do Indiana Jones com base no primeiro filme de 1981 “Raiders of the Lost Ark”. Quisemos manter a essência do que é um jogo do Indiana Jones e não fazer mais um jogo genérico de exploração e portanto decidimos manter os momentos, os cenários e a sua ferramenta mais icônica do filme num jogo de plataformas 2D em pixel arte.<br>
-Em primeiro lugar algo que nós queremos focar será nas mecânicas para dar a sensação ao jogador que está na pele do Indiana Jones. Uma delas é o chicote, com ele o jogador poderá usá- lo tanto para atacar os inimigos, como cobras ou os soldados, como para ativar e desativar armadilhas nos templos. Para além destes dois usos o chicote também será usado, para ajudar a saltar por buracos ou armadilhas.
-Outra mecânica são as próprias armadilhas que o jogador terá de enfrentar. Estas armadilhas não afetam só o jogador mas qualquer inimigo que lá passe , abrindo assim inúmeras novas maneiras de o jogador vencer os vários inimigos que encontrar. 
-Por fim, uma última mecânica essencial é o revólver. Da mesma maneira que o revólver é uma arma que o Indiana Jones no filme usa tão raramente, no jogo as balas que o jogador tem são limitadas, e estas são bastantes escassas no mapa.<br>
-A nível de marketing o jogo seria um jogo premium com um custo de mais ou menos 5 euros. O público alvo deste jogo será quer fãs do filme clássico original, quer fãs mais recentes da saga do Indiana Jones, ou simplesmente fãs de filmes e jogos de ação, assim as faixas etárias seriam sensivelmente entre os 16 e 22 anos e os 35 e 45 anos.
+Para este projeto decidimos fazer um jogo do Indiana Jones com base no primeiro filme de 1981 “Raiders of the Lost Ark”. Durante o planeamento quisemos manter algumas das partes mais icónicas do filme para transmitir a mesma essência e combiná-las com mecânicas que tornem o nosso jogador num aventureiro.<br>
+O jogador vai ter na sua posse não só a revólver que tanto vemos nos filmes do Indiana Jones, mas também uma das ferramentas mais conhecida no mundo dos exploradores, o chicote. Com estas ferramentas o jogador vai ter que enfrentar vários níveis onde não só vai lutar com inimigos mas também armadilhas.
+	Outro aspeto importante no nosso projeto vão ser os cenários, onde vamos usar algumas das cenas mais importantes do filme para trazer os nossos jogadores de volta a 1981. Desde templos a vilas escondidas no deserto, nenhum nível vai ter um visual parecido com o anterior.
+<br>
+A nível de marketing o jogo seria um produto premium com um custo de mais ou menos 5 euros. O público alvo deste jogo seria mais para as pessoas que chegaram a ver o primeiro filme do Indiana Jones onde os jogadores iriam encontrar varios momentos mais importantes do filme no jogo, sendo assim o público alvo pessoas dos 35 aos 45 anos .
            
-link https://youtu.be/Ma4FYiSIHog
-
+link https://youtu.be/KszVWtgZLIQ
 
 <br>
 <br>
@@ -22,6 +21,8 @@ link https://youtu.be/Ma4FYiSIHog
 * Público alvo
 
 * Estória
+
+* Níveis
 
 * Personagens
 
@@ -40,8 +41,8 @@ O jogador vai seguir a estória de Indiana e percorrer vários níveis onde pass
 
 ## Público Alvo 
 
-Este jogo baseado no primeiro filme vai procurar chamar a atenção não só entusiastas dos filmes de Indiana Jones, mas também dos jogadores que gostam bastante de jogos de aventura. O jogador vai ter a oportunidade de jogar vários niveis onde vai puder descobrir alguns segredos escondidos, também enfrentar vários enimigos e escapar a várias armadilhas.<br> 
-Os jogadores que gostam de resolver puzzles para chegar a recompensas únicas e estar na pele de um aventureiro quando explora templos perdidos vai certamente gostar deste projeto.
+Este jogo baseado no primeiro filme vai procurar chamar a atenção dos entusiastas dos filmes de Indiana Jones. O jogador vai ter a oportunidade de jogar vários niveis onde vai puder descobrir alguns segredos escondidos, também enfrentar vários enimigos e escapar a várias armadilhas.<br> 
+Os jogadores que gostam de resolver puzzles para chegar a recompensas únicas e estar na pele de um aventureiro quando explora templos perdidos vai certamente gostar deste projeto. este jogo vai voltar pôr os seus jogadores a recordar alguns dos melhores monetos do filme.
 
 ## Unique Selling Point 
 
@@ -53,6 +54,13 @@ Indiana recebe um telefonema de um velho amigo que lhe comunica que o governo am
 No local de escavação já se encontra um pequeno exército de Nazis que com trabalho forçado dos locais procuram a arca para proveito próprio, o objectivo de Indiana é chegar à arca antes dos Nazis. <br>
 Após encontrar a arca primeiro, o professor Jones foi surpreendido pelos Nazis que tomaram posse do artefacto e que tinham como objectivo transportar a relíquia para uma ilha perto antes de o transportar para Berlim.<br>
 Indiana segue o exército e na ilha vai descobrir o verdadeiro poder da arca e o que ela guardou durantes todos estes anos.
+
+## Niveis
+
+O jogo vai começar com um nivel introdutório onde o jogador vai perceber as principais mecânicas do jogo e os seus inimigos. Este nivel vai se passar no mesmo templo onde Indiana Jones começa no seu filme. <br>
+Depois do nivel introdutorio passamos para o deserto onde o protagonista Indiana Jones vai procurar a arca perdida e onde o jogador também vai encontrar um novo inimigo. <br>
+Quando acabar de explorar o deserto o protagonista vai se infiltrar num navio nazi onde vai tentar localizar novamente a arca perdida.<br>
+Por último o jogador vai encontrar uma ilha misteriosa onde o navio onde naufragou e segue os nazis para descobrir o que eles vão fazer com a arca. <br>
 
 ## Personagens 
 
@@ -124,3 +132,10 @@ movefoward script(for bullets)<br>
  
  link do trello
  https://trello.com/b/DdEi3MZ5/jogo
+
+<br>
+<br>
+
+Diogo Ferreira a22001907
+Diogo Nunes a22001873
+Pedro Fernandes a21908084

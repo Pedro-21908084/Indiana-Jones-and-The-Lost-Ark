@@ -28,6 +28,7 @@ public class DamageZones : MonoBehaviour
         if(collision.tag == DamagingTag || collision.tag == DamagingTag2) 
         {
             collision.GetComponent<Health>().DanmageHeal(-Damage);
+
             if (DestroyOnContact) 
             {
                 Destroy(gameObject);

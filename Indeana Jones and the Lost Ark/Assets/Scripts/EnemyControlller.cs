@@ -70,6 +70,7 @@ public class EnemyControlller : MonoBehaviour
         }
         else 
         {
+            GetComponent<Animator>().SetTrigger("Attack");
             Gun.Shoot = true;
         }
     }
@@ -78,6 +79,7 @@ public class EnemyControlller : MonoBehaviour
     {
         DamageZone.gameObject.SetActive(true);
     }
+
     public void stopAttack()
     {
         DamageZone.gameObject.SetActive(false);

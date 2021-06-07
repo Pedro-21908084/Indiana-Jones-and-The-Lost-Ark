@@ -148,7 +148,7 @@ MonoBehaviour:
   spears: {fileID: 0}
   rocks: 0
   target: Player
-  ShootTimer: 1
+  ShootTimer: 0.5
 --- !u!1 &7512290288204578642
 GameObject:
   m_ObjectHideFlags: 0
