@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     public GameObject       Bullet;
     public GameObject       ShootingPoint;
     public bool             player = true;
+    public int              MaxBullets = 3;
 
     // Update is called once per frame
     void Update()
@@ -22,12 +23,18 @@ public class Shooting : MonoBehaviour
 
         if (Shoot && Bullets > 0) 
         {
+            gameObject.GetComponent<Animator>().SetTrigger("Shoot");
             Instantiate(Bullet, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
             Shoot = false;
             Bullets -= 1;
         }else if (Bullets <= 0) 
         {
             Shoot = false;
+        }
+
+        if(player && Bullets > MaxBullets) 
+        {
+            Bullets = MaxBullets;
         }
     }
 }

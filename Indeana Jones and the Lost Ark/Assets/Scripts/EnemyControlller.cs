@@ -10,13 +10,17 @@ public class EnemyControlller : MonoBehaviour
     private EnemyMovement   Legs;
     private Shooting        Gun;
     public bool             meele = false;
-    public int              ShootTimer = 5;
+    public float              ShootTimer = 5;
     private float           timer = 0;
     public GameObject       DamageZone;
+    public bool             Boss = false;
+    public bool             SeePlayer = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.GetComponentInChildren<BoxCollider2D>().size = new Vector2( Range, gameObject.GetComponentInChildren<BoxCollider2D>().size.y);
+        Debug.Log(gameObject.GetComponentInChildren<BoxCollider2D>().size);
         Legs = gameObject.GetComponent<EnemyMovement>();
         if(!meele) 
         {
@@ -29,12 +33,12 @@ public class EnemyControlller : MonoBehaviour
     void Update()
     {
         //if the player is in line of ssight and within range stops andattacks
-        if (SeePlayer() && timer <= 0) 
+        if (SeePlayer && timer <= 0) 
         {
             Legs.move = false;
             attack();
             timer = ShootTimer;
-        }else if (!SeePlayer())
+        }else if (!SeePlayer)
         {
             Legs.move = true;
         }
@@ -46,7 +50,7 @@ public class EnemyControlller : MonoBehaviour
     }
 
     //cheks if something is in front of it, if it is and it is the player returns true
-    bool SeePlayer() 
+    /*bool SeePlayer() 
     {
         Vector2 maxRange = eyes.position + eyes.right * Range;
         RaycastHit2D hit = Physics2D.Linecast(eyes.position, maxRange, 1 << LayerMask.NameToLayer("Interactive"));
@@ -59,7 +63,7 @@ public class EnemyControlller : MonoBehaviour
             }
         }
         return false;
-    }
+    }*/
 
     //attacks if it is a range enemy it shoots if not it doers an meele attack
     private void attack() 
@@ -84,4 +88,47 @@ public class EnemyControlller : MonoBehaviour
     {
         DamageZone.gameObject.SetActive(false);
     }
+
+    /*private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == PlayerTag) 
+        {
+            float distplayyer = collision.transform.position.x - gameObject.transform.position.x;
+            if (!Boss && isLookingPlayer(distplayyer)) 
+            {
+                SeePlayer = true;
+            }else if(!Boss)
+            {
+                SeePlayer = false;
+            }
+            if (Boss) 
+            {
+                if (!isLookingPlayer(distplayyer)) 
+                {
+                    if (gameObject.transform.eulerAngles.y == 180)
+                    {
+                        gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+                    }
+                    else
+                    {
+                        gameObject.transform.eulerAngles = new Vector3(0, 180, 0);
+                    }
+                }
+                SeePlayer = true;
+            }
+        }
+        else 
+        {
+            SeePlayer = false;
+        }
+    }
+
+    private bool isLookingPlayer(float dist) 
+    {
+        if (dist == Mathf.Abs(dist)*gameObject.transform.right.x) 
+        {
+            return true;
+        }
+        return false;
+    }*/
 }
