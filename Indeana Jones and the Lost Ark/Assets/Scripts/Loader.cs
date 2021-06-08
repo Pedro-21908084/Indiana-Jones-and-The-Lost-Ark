@@ -18,6 +18,8 @@ public class Loader : MonoBehaviour
     public Sprite Image23;
     public Sprite Image34;
     public Sprite Imagefinal;
+    public bool boss;
+    public GameObject Boss;
 
     private void Start()
     {
@@ -46,6 +48,12 @@ public class Loader : MonoBehaviour
                 image.GetComponent<Image>().sprite = Imagefinal;
             }
         }
+
+        if (boss && Boss == null) 
+        {
+            
+            LoadNext();
+        }
     }
 
     public void LoadNew() 
@@ -70,6 +78,7 @@ public class Loader : MonoBehaviour
         loadGame();
         level += 1;
         saveGame();
+        
         SceneManager.LoadScene(NextScene, LoadSceneMode.Single);
     }
     public void loadx() 
@@ -89,16 +98,19 @@ public class Loader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (tutorial) 
+        if (collision.tag == PlayerTag)
         {
-            collision.gameObject.SetActive(false);
-            tutorialScreen.SetActive(true);
-        }
-        else 
-        {
-            //level += 1;
-            //saveGame();
-            LoadNext();
+            if (tutorial)
+            {
+                collision.gameObject.SetActive(false);
+                tutorialScreen.SetActive(true);
+            }
+            else
+            {
+                //level += 1;
+                //saveGame();
+                LoadNext();
+            }
         }
     }
 

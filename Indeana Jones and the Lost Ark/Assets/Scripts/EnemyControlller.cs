@@ -20,7 +20,6 @@ public class EnemyControlller : MonoBehaviour
     void Start()
     {
         gameObject.GetComponentInChildren<BoxCollider2D>().size = new Vector2( Range, gameObject.GetComponentInChildren<BoxCollider2D>().size.y);
-        Debug.Log(gameObject.GetComponentInChildren<BoxCollider2D>().size);
         Legs = gameObject.GetComponent<EnemyMovement>();
         if(!meele) 
         {
@@ -70,11 +69,11 @@ public class EnemyControlller : MonoBehaviour
     {
         if (meele) 
         {
-            GetComponent<Animator>().SetTrigger("Attack");
+            GetComponent<Animator>().SetTrigger("Shoot");
         }
         else 
         {
-            GetComponent<Animator>().SetTrigger("Attack");
+            GetComponent<Animator>().SetTrigger("Shoot");
             Gun.Shoot = true;
         }
     }

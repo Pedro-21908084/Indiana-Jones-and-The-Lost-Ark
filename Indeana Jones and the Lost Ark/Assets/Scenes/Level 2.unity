@@ -15657,6 +15657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loader
       objectReference: {fileID: 0}
+    - target: {fileID: 4724543585697823358, guid: ffc928b309e59fe4599a5be0647f4ab1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4724543585697823359, guid: ffc928b309e59fe4599a5be0647f4ab1, type: 3}
       propertyPath: NextScene
       value: loading
@@ -17637,7 +17641,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nazi
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5138242352272014205, guid: 33f1dbb686218ad4a92cc6808e20ad61, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33f1dbb686218ad4a92cc6808e20ad61, type: 3}
 --- !u!1 &1491513920
 GameObject:

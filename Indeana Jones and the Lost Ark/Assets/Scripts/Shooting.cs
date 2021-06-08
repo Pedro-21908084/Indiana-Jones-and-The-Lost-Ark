@@ -23,7 +23,10 @@ public class Shooting : MonoBehaviour
 
         if (Shoot && Bullets > 0) 
         {
-            gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+            if (gameObject.GetComponent<Animator>() != null)
+            {
+                gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+            }
             Instantiate(Bullet, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
             Shoot = false;
             Bullets -= 1;
