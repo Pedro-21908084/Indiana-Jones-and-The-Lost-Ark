@@ -67,13 +67,14 @@ public class EnemyControlller : MonoBehaviour
     //attacks if it is a range enemy it shoots if not it doers an meele attack
     private void attack() 
     {
+        
         if (meele) 
         {
-            GetComponent<Animator>().SetTrigger("Shoot");
+            GetComponent<Animator>().SetTrigger("Attack");
         }
         else 
         {
-            GetComponent<Animator>().SetTrigger("Shoot");
+            GetComponent<Animator>().SetTrigger("Attack");
             Gun.Shoot = true;
         }
     }

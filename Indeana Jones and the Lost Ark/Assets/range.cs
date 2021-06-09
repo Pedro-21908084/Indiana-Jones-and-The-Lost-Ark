@@ -21,6 +21,7 @@ public class range : MonoBehaviour
             {
                 gameObject.GetComponentInParent<EnemyControlller>().SeePlayer = false;
             }
+
             if (Boss)
             {
                 if (!isLookingPlayer(distplayyer))

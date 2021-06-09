@@ -68,7 +68,7 @@ public class EnemyMovement : MonoBehaviour
         {
             gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
         }
-        else
+        else if (Rb.velocity.x < 0)
         {
             gameObject.transform.eulerAngles = new Vector3(0, 180, 0);
         }
