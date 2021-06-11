@@ -23,7 +23,7 @@ public class Shooting : MonoBehaviour
 
         if (Shoot && Bullets > 0) 
         {
-            if (gameObject.GetComponent<Animator>() != null)
+            if (gameObject.GetComponent<Animator>() != null && player)
             {
                 gameObject.GetComponent<Animator>().SetTrigger("Shoot");
             }
