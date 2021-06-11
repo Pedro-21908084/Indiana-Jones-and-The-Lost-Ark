@@ -60,7 +60,18 @@ public class PlayerMovement : MonoBehaviour
             Rb.velocity = new Vector2(MaxSpeed * Inputs.x * drag, Rb.velocity.y);
         }
 
-        if (GetComponent<Whip>().attacking || GetComponentInChildren<DetectWall>().againstWall) 
+        if (Inputs.x > 0.2 && !hooking)
+        {
+            gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (Inputs.x < -0.2 && !hooking)
+        {
+            gameObject.transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+
+
+        //Debug.Log(Rb.velocity.x*gameObject.transform.right.x);
+        if (GetComponent<Whip>().attacking || (GetComponentInChildren<DetectWall>().againstWall && Rb.velocity.x * gameObject.transform.right.x>0)) 
         {
             Rb.velocity = new Vector2(0, Rb.velocity.y);
         }
@@ -76,14 +87,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && onGround == true)
         {
             Rb.velocity = new Vector2(Rb.velocity.x, JumpSpeed);
-        }
-
-        if (Rb.velocity.x > 0.2 && !hooking)
-        {
-            gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
-        }else if(Rb.velocity.x < -0.2 && !hooking)
-        {
-            gameObject.transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
         if (Inputs.x == 0 && !hooking && onGround)

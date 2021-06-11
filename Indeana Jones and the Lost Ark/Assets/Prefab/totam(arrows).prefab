@@ -130,6 +130,7 @@ MonoBehaviour:
   Bullet: {fileID: 2866864815696029748, guid: 5fa86be516058e2469ab4ef6ce7cf2eb, type: 3}
   ShootingPoint: {fileID: 7512290288204578642}
   player: 0
+  MaxBullets: 3
 --- !u!114 &6220605163011197191
 MonoBehaviour:
   m_ObjectHideFlags: 0
