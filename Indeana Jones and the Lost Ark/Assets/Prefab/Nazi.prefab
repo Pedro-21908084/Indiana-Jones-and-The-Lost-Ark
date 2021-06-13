@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3baff21801dff3046b3bc5fcb09b14e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 20
+  Range: 12
   PlayerTag: Player
   eyes: {fileID: 4920306944097499662}
   meele: 0
